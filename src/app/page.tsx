@@ -159,7 +159,7 @@ export default function Home() {
                   <img src={skill.icon} alt={`${skill.name} icon`} className="w-12 h-12" />
                   <div className="flex-grow">
                     <p className="font-semibold mb-2">{skill.name}</p>
-                    <Progress value={skill.level} className="w-full" />
+                    <Progress valueLabel={skill.level} className="w-full" />
                   </div>
                   <span className="text-sm font-medium">{skill.level}</span>
                 </div>
