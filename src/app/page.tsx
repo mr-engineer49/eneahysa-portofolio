@@ -199,7 +199,6 @@ export default function Home() {
                 <div key={index} className="bg-gray-700 rounded-lg p-6">
                   <p className="text-gray-300 mb-4">"{testimonial.content}"</p>
                   <div className="flex items-center">
-                    <img src={testimonial.avatar} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4" />
                     <div>
                       <p className="font-semibold">{testimonial.name}</p>
                       <p className="text-sm text-gray-400">{testimonial.position}</p>
