@@ -7,8 +7,37 @@ import { useState } from 'react';
 import { Button } from "@nextui-org/button";
 import { Progress } from "@nextui-org/progress";
 
+
+
+
+
 export default function Home() {
+
+  const skills = [
+    { category:'Testing', name:"Automation Testing", icon:"https://img.icons8.com/color/48/browser-stack.png", level:"Intermediate"},
+    { category:'Development', name: 'JavaScript', icon: 'https://img.icons8.com/color/48/000000/javascript.png', level: 'Beginner' },
+    { category:'Testing', name: 'Python', icon: 'https://img.icons8.com/color/48/000000/python.png', level: 'Intermediate' },
+    { category:'Development', name: 'React', icon: 'https://img.icons8.com/color/48/000000/react-native.png', level: 'Advanced-Beginner' },
+    { category:'Development', name: 'Node.js', icon: 'https://img.icons8.com/color/48/000000/nodejs.png', level: 'Beginner' },
+    { category:'Testing', name: 'Selenium', icon:"https://img.icons8.com/fluency/48/selenium-test-automation.png", level: 'Intermediate' },
+    { category:'Design', name: 'Figma', icon: 'https://img.icons8.com/color/48/figma--v1.png', level: 'Beginner' },
+    { category:'Development', name: 'SQL', icon: 'https://img.icons8.com/color/48/000000/sql.png', level: 'Beginner' },
+    { category:'Development', name: 'Git', icon: 'https://img.icons8.com/color/48/000000/git.png', level: 'Knowledgeable' },
+    { category:'Development',name: 'Docker', icon: 'https://img.icons8.com/color/48/000000/docker.png', level: 'Beginner' },
+    { category:'Development', name: 'Wordpress', icon: 'https://img.icons8.com/fluency/48/wordpress.png', level: 'Have Experience & Hands on' },
+    { category:'Development', name: 'Django', icon: 'https://img.icons8.com/ios/50/django.png', level: 'Intermediate' },
+    { category:'Design',name: 'Video Editing', icon: 'https://img.icons8.com/office/40/video-editing.png', level: 'Intermediate' },
+    { category:'Design',name: 'Adobe Premiere Pro', icon: 'https://img.icons8.com/color/48/adobe-premiere-pro--v1.png', level: 'Intermediate' },
+    { category:'Design',name: 'Davinci Resolve', icon: 'https://img.icons8.com/color/48/davinci-resolve.png', level: 'Intermediate' },
+    { category:'Design',name: 'Canva', icon: 'https://img.icons8.com/fluency/48/canva.png', level: 'Intermediate' },
+
+  ]
+
   const [activeSection, setActiveSection] = useState('home')
+  const testingSkills = skills.filter(skill => skill.category === 'Testing');
+  const developmentSkills = skills.filter(skill => skill.category === 'Development');
+  const designSkills = skills.filter(skill => skill.category === 'Design');
+
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id)
@@ -33,21 +62,13 @@ export default function Home() {
       technologies: ['Django', 'Tailwind CSS' , 'SQLite3'],
       image: '/placeholder.svg?height=200&width=300',
     },
-  ]
-
-  const skills = [
-    { name: 'JavaScript', icon: 'https://img.icons8.com/color/48/000000/javascript.png', level: 'Beginner' },
-    { name: 'Python', icon: 'https://img.icons8.com/color/48/000000/python.png', level: 'Intermidiate' },
-    { name: 'React', icon: 'https://img.icons8.com/color/48/000000/react-native.png', level: 'Advanced-Beginner' },
-    { name: 'Node.js', icon: 'https://img.icons8.com/color/48/000000/nodejs.png', level: 'Beginner' },
-    { name: 'Express', icon: 'https://img.icons8.com/color/48/000000/express.png', level: 'Beginner' },
-    { name: 'MongoDB', icon: 'https://img.icons8.com/color/48/000000/mongodb.png', level: 'Beginner' },
-    { name: 'SQL', icon: 'https://img.icons8.com/color/48/000000/sql.png', level: 'Beginner' },
-    { name: 'Git', icon: 'https://img.icons8.com/color/48/000000/git.png', level: 'Knowledgable' },
-    { name: 'Docker', icon: 'https://img.icons8.com/color/48/000000/docker.png', level: 'N/a' },
-    { name: 'AWS', icon: 'https://img.icons8.com/color/48/000000/amazon-web-services.png', level: 'N/a' },
-    { name: 'TensorFlow', icon: 'https://img.icons8.com/color/48/000000/tensorflow.png', level: 'Beginner' },
-    { name: 'PyTorch', icon: 'https://img.icons8.com/color/48/000000/pytorch.png', level: 'Beginner' },
+    {
+      title: 'E-Commerce Front-end Platform',
+      project_url: 'https://github.com/mr-engineer49/ecommerce-ui',
+      description: 'This is a Frontend Project website using ReactJs and other its ui libraries.',
+      technologies: ['ReactJs', 'Redux', 'Material UI', 'Tailwind CSS'],
+      image: '/placeholder.svg?height=200&width=300',
+    },
   ]
 
   const testimonials = [
@@ -118,14 +139,15 @@ export default function Home() {
             >
               Software Testing&QA | Web Development | AI & Machine Learning & Technology Enthusiast
             </motion.p>
-            <motion.div
+            <motion.div className='flex inline center justify-center '
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <Button onClick={() => scrollTo('contact')} className="bg-blue-500 hover:bg-blue-600 w-32 rounded">
+              <Button onClick={() => scrollTo('contact')} className="bg-blue-500 hover:bg-blue-600 w-32 px-4 rounded">
                 Get in touch
               </Button>
+              <Button className='flex inline px-5'>CV<img className='flex inline px-2' width="44" height="44" src="https://img.icons8.com/color/44/download--v1.png" alt="download--v1"/></Button>
             </motion.div>
           </div>
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -153,8 +175,11 @@ export default function Home() {
         <section id="skills" className="min-h-screen flex items-center justify-center py-20 bg-gray-800">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold mb-12 text-center">Skills & Technologies</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {skills.map((skill) => (
+            {/* Testing Skills */}
+            <h3 className="text-xl font-bold mb-6 text-center">Testing Skills</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              {testingSkills.length > 0 ? (
+              testingSkills.map((skill) => (
                 <div key={skill.name} className="bg-gray-700 rounded-lg p-6 flex items-center space-x-4">
                   <img src={skill.icon} alt={`${skill.name} icon`} className="w-12 h-12" />
                   <div className="flex-grow">
@@ -163,8 +188,47 @@ export default function Home() {
                   </div>
                   <span className="text-sm font-medium">{skill.level}</span>
                 </div>
-              ))}
+              ))
+            ) : (
+                <div>No Testing Skills Available</div>
+              )}
             </div>
+            {/* Development Skills */}
+    <h3 className="text-xl font-bold mb-6 text-center">Development Skills</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {developmentSkills.length > 0 ? (
+        developmentSkills.map(skill => (
+          <div key={skill.name} className="bg-gray-700 rounded-lg p-6 flex items-center space-x-4">
+            <img src={skill.icon} alt={`${skill.name} icon`} className="w-12 h-12" />
+            <div className="flex-grow">
+              <p className="font-semibold mb-2">{skill.name}</p>
+              <Progress valueLabel={skill.level} className="w-full" />
+            </div>
+            <span className="text-sm font-medium">{skill.level}</span>
+          </div>
+        ))
+      ) : (
+        <div>No Development Skills Available</div>
+      )}
+    </div>
+    {/* Design Skills */}
+    <h3 className="text-xl font-bold mb-6 text-center">UI/UX Editing Skills</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {designSkills.length > 0 ? (
+        designSkills.map(skill => (
+          <div key={skill.name} className="bg-gray-700 rounded-lg p-6 flex items-center space-x-4">
+            <img src={skill.icon} alt={`${skill.name} icon`} className="w-12 h-12" />
+            <div className="flex-grow">
+              <p className="font-semibold mb-2">{skill.name}</p>
+              <Progress valueLabel={skill.level} className="w-full" />
+            </div>
+            <span className="text-sm font-medium">{skill.level}</span>
+          </div>
+        ))
+      ) : (
+        <div>No Development Skills Available</div>
+      )}
+    </div>
           </div>
         </section>
 
