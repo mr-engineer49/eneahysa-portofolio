@@ -6,9 +6,8 @@ import { useState } from 'react';
 
 import { Button } from "@nextui-org/button";
 import { Progress } from "@nextui-org/progress";
+import Link from 'next/link';
 import PDFbuttonDownloadCV from './PDFbuttonDownloadCV';
-
-
 
 
 
@@ -104,6 +103,9 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm">
         <nav className="container mx-auto px-6 py-4">
+        <>
+          <Link href="/components" className='flex inline py-4'>View Other Version</Link>
+        </>
           <ul className="flex justify-center space-x-8">
             {['home', 'skills', 'projects', 'contact'].map((item) => (
               <li key={item}>
