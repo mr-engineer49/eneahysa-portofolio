@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import { Button } from "@nextui-org/button";
 import { Progress } from "@nextui-org/progress";
+import PDFbuttonDownloadCV from './PDFbuttonDownloadCV';
 
 
 
@@ -104,7 +105,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm">
         <nav className="container mx-auto px-6 py-4">
           <ul className="flex justify-center space-x-8">
-            {['home', 'about', 'skills', 'projects', 'testimonials', 'blog', 'contact'].map((item) => (
+            {['home', 'skills', 'projects', 'contact'].map((item) => (
               <li key={item}>
                 <button
                   onClick={() => scrollTo(item)}
@@ -147,7 +148,7 @@ export default function Home() {
               <Button onClick={() => scrollTo('contact')} className="bg-blue-500 hover:bg-blue-600 w-32 px-4 rounded">
                 Get in touch
               </Button>
-              <Button className='flex inline px-5'>CV<img className='flex inline px-2' width="44" height="44" src="https://img.icons8.com/color/44/download--v1.png" alt="download--v1"/></Button>
+              <PDFbuttonDownloadCV/>
             </motion.div>
           </div>
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
