@@ -4,11 +4,8 @@
 import React from 'react';
 
 
-interface PDFDownloadButtonProps {
-  secret?: string;
-}
 
-const PDFbuttonDownloadCV: React.FC<PDFDownloadButtonProps> = ({ secret }) => {
+const PDFbuttonDownloadCV = () => {
   return (
     <div className="flex inline">
     <a className="flex inline"
